@@ -1,4 +1,5 @@
-# PeriPage Printer Driver Utility
+# PeriPage A6/A8 Printer Driver Utility
+/The Ultimate Visual Modification
 
 This is a modified version of the PeriPage Printer Driver with a better wizard and a Spanish translation.
 Files were retrieved from the official PeriPage website and repackaged with a new look.
