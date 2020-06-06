@@ -1,0 +1,80 @@
+;
+;	Printer Installation File
+;
+;	Power by www.beeprt.com 
+;   
+;    
+; 	
+[Version]
+Signature="$Windows NT$"
+Provider=%iLeadtek%
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Class=Printer
+CataLogFile = PeriPage.cat
+DriverVer = 09/21/2018,1.1.5.0
+
+
+[Manufacturer]
+"iLeadtek" = iLeadtek, NTamd64, NTia64
+
+
+[iLeadtek]
+"PeriPage A6" = Alison_Printer,USBPRINT\PeriPage_A6B36A
+"PeriPage A6+" = Alison_Printer_A7,USBPRINT\PeriPage_A773AB
+"PeriPage A8" = Alison_Printer_A8,USBPRINT\PeriPage_A877EB
+
+
+[iLeadtek.NTamd64]
+"PeriPage A6" = Alison_Printer,USBPRINT\PeriPage_A6B36A
+"PeriPage A6+" = Alison_Printer_A7,USBPRINT\PeriPage_A773AB
+"PeriPage A8" = Alison_Printer_A8,USBPRINT\PeriPage_A877EB
+
+[iLeadtek.NTia64]
+"PeriPage A6" = Alison_Printer,USBPRINT\PeriPage_A6B36A
+"PeriPage A6+" = Alison_Printer_A7,USBPRINT\PeriPage_A773AB
+"PeriPage A8" = Alison_Printer_A8,USBPRINT\PeriPage_A877EB
+
+[Alison_Printer]
+CopyFiles=@Printer.GPD
+DataSection=UNIDRV_DATA
+DataFile=Printer.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[Alison_Printer_A7]
+CopyFiles=@PrinterA7.GPD
+DataSection=UNIDRV_DATA
+DataFile=PrinterA7.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+[Alison_Printer_A8]
+CopyFiles=@PrinterA8.GPD
+DataSection=UNIDRV_DATA
+DataFile=PrinterA8.GPD
+Include=NTPRINT.INF
+Needs=UNIDRV.OEM
+
+
+[DestinationDirs]
+DefaultDestDir=66000
+
+[SourceDisksNames.x86]
+1 = %disk1%,,,
+
+[SourceDisksNames.amd64]
+1 = %disk1%,,,
+
+[SourceDisksNames.ia64]
+1 = %disk1%,,,
+
+[SourceDisksFiles]
+Printer.GPD = 1
+PrinterA7.GPD = 1
+PrinterA8.GPD =1
+
+[Strings]
+PrinterClassName="Printers"
+iLeadtek="iLeadtek"
+disk1="iLeadtek Printer Driver Disk"
+

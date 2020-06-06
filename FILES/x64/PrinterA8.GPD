@@ -1,0 +1,1349 @@
+*GPDSpecVersion: "1.0"
+*Include: "StdNames.gpd"
+*GPDFileVersion: "1.0"
+*GPDFileName: "PrinterA8.GPD"
+*ModelName: "Alison A8"
+*MasterUnits: PAIR(203, 203)
+*PrinterType: SERIAL
+*CodePage: 936
+*Feature: Orientation
+{
+    *rcNameID: =ORIENTATION_DISPLAY
+    *DefaultOption: PORTRAIT
+    *Option: PORTRAIT
+    {
+        *rcNameID: =PORTRAIT_DISPLAY
+    }
+    *Option: LANDSCAPE_CC270
+    {
+        *rcNameID: =LANDSCAPE_DISPLAY
+    }
+}
+
+*Feature: InputBin
+{
+    *rcNameID: =PAPER_SOURCE_DISPLAY
+    *DefaultOption: TRACTOR
+    *Option: TRACTOR
+    {
+        *rcNameID: =TRACTOR_DISPLAY
+    }
+    *Option: MANUAL
+    {
+        *rcNameID: =MANUAL_FEED_DISPLAY
+    }
+}
+
+
+
+*Feature: Resolution
+{
+    *rcNameID: =RESOLUTION_DISPLAY
+    *DefaultOption: Option1
+    *Option: Option1
+    {
+        *Name: "203 x 203 " =DOTS_PER_INCH
+        *DPI: PAIR(203, 203)
+        *TextDPI: PAIR(203, 203)
+        *EXTERN_GLOBAL: *StripBlanks: LIST(LEADING,TRAILING)
+	*PinsPerPhysPass: 1
+        *PinsPerLogPass: 24
+        *SpotDiameter: 100
+        *Command: CmdSendBlockData { *Cmd : "<1D>v0<00>" %l{NumOfDataBytes / 24} "<1800>"}
+    }
+}
+
+*Feature: PaperSize
+{
+    *rcNameID: =PAPER_SIZE_DISPLAY
+    *DefaultOption: Option2
+    *Option: Option1
+    {
+		*Name: "58 x 210mm"
+        *PageDimensions: PAIR(464, 1680)*%1680
+        *PrintableArea: PAIR(384, 1680)*%1680
+        *PrintableOrigin: PAIR(40, 0)
+    }
+
+    *Option: Option2
+    {
+		*Name: "58 x 297mm"
+        *PageDimensions: PAIR(464, 2375)*%2375
+        *PrintableArea: PAIR(384, 2375)*%2375
+        *PrintableOrigin: PAIR(40, 0)
+    }
+
+    *Option: Option3
+    {
+		*Name: "58 x 3276mm"
+        *PageDimensions: PAIR(464, 26182)*%1680
+        *PrintableArea: PAIR(384, 26182)*%1680
+        *PrintableOrigin: PAIR(40, 0)
+    }
+
+    *Option: CUSTOMSIZE
+    {
+        *rcNameID: =USER_DEFINED_SIZE_DISPLAY
+        *MinSize: PAIR(320, 180)
+        *MaxSize: PAIR(464, 32767)
+        *MaxPrintableWidth: 464
+        *MinLeftMargin: 40
+         *CursorOrigin: PAIR(40,0)
+        *CenterPrintable?: TRUE
+    }
+}
+
+
+*Feature:BlackMark
+{
+	*FeatureType:PRINTER_PROPERTY
+	*Name:"Paper"
+	*DefaultOption:Continous
+	*Option:Continous
+	{
+		*Name:"Continuous"
+		*Command:CmdSelect
+		{
+			 *Order: PAGE_FINISH.3
+				*Cmd:""
+		}
+	}
+	*Option:Label
+	{
+		*Name:"Label"
+		*Command:CmdSelect
+		{
+			 *Order: PAGE_FINISH.3
+			*Cmd:"<1D><0C>"
+		}
+	}
+
+}
+
+
+
+*Feature: DocPrintBegin
+{
+    *Name: "Beginning of the document"
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Move0
+    *Option: Move0
+    {
+        *Name: "None"
+    }
+    *Option: Move1
+    {
+        *Name: "Feed 1 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 08>"
+        }
+    }
+    *Option: Move2
+    {
+        *Name: "Feed 2 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 10>"
+        }
+    }
+    *Option: Move3
+    {
+        *Name: "Feed 3 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 18>"
+        }
+    }
+    *Option: Move4
+    {
+        *Name: "Feed 4 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 20>"
+        }
+    }
+    *Option: Move5
+    {
+        *Name: "Feed 5 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 28>"
+        }
+    }
+    *Option: Move6
+    {
+        *Name: "Feed 6 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 30>"
+        }
+    }
+    *Option: Move7
+    {
+        *Name: "Feed 7 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 38>"
+        }
+    }
+    *Option: Move8
+    {
+        *Name: "Feed 8 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 40>"
+        }
+    }
+    *Option: Move9
+    {
+        *Name: "Feed 9 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 48>"
+        }
+    }
+    *Option: Move10
+    {
+        *Name: "Feed 10 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 50>"
+        }
+    }
+    *Option: Move11
+    {
+        *Name: "Feed 11 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 58>"
+        }
+    }
+    *Option: Move12
+    {
+        *Name: "Feed 12 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 60>"
+        }
+    }
+    *Option: Move13
+    {
+        *Name: "Feed 13 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 68>"
+        }
+    }
+    *Option: Move14
+    {
+        *Name: "Feed 14 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 70>"
+        }
+    }
+    *Option: Move15
+    {
+        *Name: "Feed 15 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 78>"
+        }
+    }
+    *Option: Move16
+    {
+        *Name: "Feed 16 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 80>"
+        }
+    }
+    *Option: Move17
+    {
+        *Name: "Feed 17 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 88>"
+        }
+    }
+    *Option: Move18
+    {
+        *Name: "Feed 18 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 90>"
+        }
+    }
+    *Option: Move19
+    {
+        *Name: "Feed 19 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A 98>"
+        }
+    }
+    *Option: Move20
+    {
+        *Name: "Feed 20 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A A0>"
+        }
+    }
+    *Option: Move21
+    {
+        *Name: "Feed 21 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A A8>"
+        }
+    }
+    *Option: Move22
+    {
+        *Name: "Feed 22 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A B0>"
+        }
+    }
+    *Option: Move23
+    {
+        *Name: "Feed 23 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A B8>"
+        }
+    }
+    *Option: Move24
+    {
+        *Name: "Feed 24 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A C0>"
+        }
+    }
+    *Option: Move25
+    {
+        *Name: "Feed 25 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A C8>"
+        }
+    }
+    *Option: Move26
+    {
+        *Name: "Feed 26 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A D0>"
+        }
+    }
+    *Option: Move27
+    {
+        *Name: "Feed 27 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A D8>"
+        }
+    }
+    *Option: Move28
+    {
+        *Name: "Feed 28 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A E0>"
+        }
+    }
+    *Option: Move29
+    {
+        *Name: "Feed 29 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A E8>"
+        }
+    }
+    *Option: Move30
+    {
+        *Name: "Feed 30 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_SETUP.6
+            *Cmd: "<1B 4A F0>"
+        }
+    }
+
+}
+
+
+
+*Feature: DocPrintEnd
+{
+    *Name: "Ending of the document"
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Move0
+    *Option: Move0
+    {
+        *Name: "Feed"
+    }
+    *Option: Move1
+    {
+        *Name: "Feed 1 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 08>"
+        }
+    }
+    *Option: Move2
+    {
+        *Name: "Feed 2 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 10>"
+        }
+    }
+    *Option: Move3
+    {
+        *Name: "Feed 3 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 18>"
+        }
+    }
+    *Option: Move4
+    {
+        *Name: "Feed 4 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 20>"
+        }
+    }
+    *Option: Move5
+    {
+        *Name: "Feed 5 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 28>"
+        }
+    }
+    *Option: Move6
+    {
+        *Name: "Feed 6 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 30>"
+        }
+    }
+    *Option: Move7
+    {
+        *Name: "Feed 7 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 38>"
+        }
+    }
+    *Option: Move8
+    {
+        *Name: "Feed 8 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 40>"
+        }
+    }
+    *Option: Move9
+    {
+        *Name: "Feed 9 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 48>"
+        }
+    }
+    *Option: Move10
+    {
+        *Name: "Feed 10 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 50>"
+        }
+    }
+    *Option: Move11
+    {
+        *Name: "Feed 11 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 58>"
+        }
+    }
+    *Option: Move12
+    {
+        *Name: "Feed 12 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 60>"
+        }
+    }
+    *Option: Move13
+    {
+        *Name: "Feed 13 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 68>"
+        }
+    }
+    *Option: Move14
+    {
+        *Name: "Feed 14 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 70>"
+        }
+    }
+    *Option: Move15
+    {
+        *Name: "Feed 15 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 78>"
+        }
+    }
+    *Option: Move16
+    {
+        *Name: "Feed 16 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 80>"
+        }
+    }
+    *Option: Move17
+    {
+        *Name: "Feed 17 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 88>"
+        }
+    }
+    *Option: Move18
+    {
+        *Name: "Feed 18 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 90>"
+        }
+    }
+    *Option: Move19
+    {
+        *Name: "Feed 19 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A 98>"
+        }
+    }
+    *Option: Move20
+    {
+        *Name: "Feed 20 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A A0>"
+        }
+    }
+    *Option: Move21
+    {
+        *Name: "Feed 21 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A A8>"
+        }
+    }
+    *Option: Move22
+    {
+        *Name: "Feed 22 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A B0>"
+        }
+    }
+    *Option: Move23
+    {
+        *Name: "Feed 23 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A B8>"
+        }
+    }
+    *Option: Move24
+    {
+        *Name: "Feed 24 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A C0>"
+        }
+    }
+    *Option: Move25
+    {
+        *Name: "Feed 25 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A C8>"
+        }
+    }
+    *Option: Move26
+    {
+        *Name: "Feed 26 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A D0>"
+        }
+    }
+    *Option: Move27
+    {
+        *Name: "Feed 27 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A D8>"
+        }
+    }
+    *Option: Move28
+    {
+        *Name: "Feed 28 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A E0>"
+        }
+    }
+    *Option: Move29
+    {
+        *Name: "Feed 29 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A E8>"
+        }
+    }
+    *Option: Move30
+    {
+        *Name: "Feed 30 mm"
+        *Command: CmdSelect
+        {
+            *Order: DOC_FINISH.3
+            *Cmd: "<1B 4A F0>"
+        }
+    }
+    
+}
+
+
+*Feature: PagePrintBegin
+{
+    *Name: "Beginning of the Page"
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Move0
+    *Option: Move0
+    {
+        *Name: "Feed"
+    }
+    *Option: Move1
+    {
+        *Name: "Feed 1 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 08>"
+        }
+    }
+    *Option: Move2
+    {
+        *Name: "Feed 2 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 10>"
+        }
+    }
+    *Option: Move3
+    {
+        *Name: "Feed 3 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 18>"
+        }
+    }
+    *Option: Move4
+    {
+        *Name: "Feed 4 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 20>"
+        }
+    }
+    *Option: Move5
+    {
+        *Name: "Feed 5 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 28>"
+        }
+    }
+    *Option: Move6
+    {
+        *Name: "Feed 6 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 30>"
+        }
+    }
+    *Option: Move7
+    {
+        *Name: "Feed 7 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 38>"
+        }
+    }
+    *Option: Move8
+    {
+        *Name: "Feed 8 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 40>"
+        }
+    }
+    *Option: Move9
+    {
+        *Name: "Feed 9 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 48>"
+        }
+    }
+    *Option: Move10
+    {
+        *Name: "Feed 10 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 50>"
+        }
+    }
+    *Option: Move11
+    {
+        *Name: "Feed 11 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 58>"
+        }
+    }
+    *Option: Move12
+    {
+        *Name: "Feed 12 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 60>"
+        }
+    }
+    *Option: Move13
+    {
+        *Name: "Feed 13 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 68>"
+        }
+    }
+    *Option: Move14
+    {
+        *Name: "Feed 14 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 70>"
+        }
+    }
+    *Option: Move15
+    {
+        *Name: "Feed 15 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 78>"
+        }
+    }
+    *Option: Move16
+    {
+        *Name: "Feed 16 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 80>"
+        }
+    }
+    *Option: Move17
+    {
+        *Name: "Feed 17 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 88>"
+        }
+    }
+    *Option: Move18
+    {
+        *Name: "Feed 18 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 90>"
+        }
+    }
+    *Option: Move19
+    {
+        *Name: "Feed 19 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A 98>"
+        }
+    }
+    *Option: Move20
+    {
+        *Name: "Feed 20 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A A0>"
+        }
+    }
+    *Option: Move21
+    {
+        *Name: "Feed 21 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A A8>"
+        }
+    }
+    *Option: Move22
+    {
+        *Name: "Feed 22 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A B0>"
+        }
+    }
+    *Option: Move23
+    {
+        *Name: "Feed 23 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A B8>"
+        }
+    }
+    *Option: Move24
+    {
+        *Name: "Feed 24 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A C0>"
+        }
+    }
+    *Option: Move25
+    {
+        *Name: "Feed 25 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A C8>"
+        }
+    }
+    *Option: Move26
+    {
+        *Name: "Feed 26 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A D0>"
+        }
+    }
+    *Option: Move27
+    {
+        *Name: "Feed 27 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A D8>"
+        }
+    }
+    *Option: Move28
+    {
+        *Name: "Feed 28 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A E0>"
+        }
+    }
+    *Option: Move29
+    {
+        *Name: "Feed 29 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A E8>"
+        }
+    }
+    *Option: Move30
+    {
+        *Name: "Feed 30 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_SETUP.6
+            *Cmd: "<1B 4A F0>"
+        }
+    }
+
+}
+
+
+*Feature: PagePrintEnd
+{
+    *Name: "Ending of the document"
+    *FeatureType: PRINTER_PROPERTY
+    *DefaultOption: Move0
+    *Option: Move0
+    {
+        *Name: "Feed"
+    }
+    *Option: Move1
+    {
+        *Name: "Feed 1 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 08>"
+        }
+    }
+    *Option: Move2
+    {
+        *Name: "Feed 2 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 10>"
+        }
+    }
+    *Option: Move3
+    {
+        *Name: "Feed 3 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 18>"
+        }
+    }
+    *Option: Move4
+    {
+        *Name: "Feed 4 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 20>"
+        }
+    }
+    *Option: Move5
+    {
+        *Name: "Feed 5 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 28>"
+        }
+    }
+    *Option: Move6
+    {
+        *Name: "Feed 6 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 30>"
+        }
+    }
+    *Option: Move7
+    {
+        *Name: "Feed 7 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 38>"
+        }
+    }
+    *Option: Move8
+    {
+        *Name: "Feed 8 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 40>"
+        }
+    }
+    *Option: Move9
+    {
+        *Name: "Feed 9 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 48>"
+        }
+    }
+    *Option: Move10
+    {
+        *Name: "Feed 10 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 50>"
+        }
+    }
+    *Option: Move11
+    {
+        *Name: "Feed 11 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 58>"
+        }
+    }
+    *Option: Move12
+    {
+        *Name: "Feed 12 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 60>"
+        }
+    }
+    *Option: Move13
+    {
+        *Name: "Feed 13 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 68>"
+        }
+    }
+    *Option: Move14
+    {
+        *Name: "Feed 14 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 70>"
+        }
+    }
+    *Option: Move15
+    {
+        *Name: "Feed 15 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 78>"
+        }
+    }
+    *Option: Move16
+    {
+        *Name: "Feed 16 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 80>"
+        }
+    }
+    *Option: Move17
+    {
+        *Name: "Feed 17 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 88>"
+        }
+    }
+    *Option: Move18
+    {
+        *Name: "Feed 18 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 90>"
+        }
+    }
+    *Option: Move19
+    {
+        *Name: "Feed 19 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A 98>"
+        }
+    }
+    *Option: Move20
+    {
+        *Name: "Feed 20 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A A0>"
+        }
+    }
+    *Option: Move21
+    {
+        *Name: "Feed 21 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A A8>"
+        }
+    }
+    *Option: Move22
+    {
+        *Name: "Feed 22 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A B0>"
+        }
+    }
+    *Option: Move23
+    {
+        *Name: "Feed 23 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A B8>"
+        }
+    }
+    *Option: Move24
+    {
+        *Name: "Feed 24 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A C0>"
+        }
+    }
+    *Option: Move25
+    {
+        *Name: "Feed 25 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A C8>"
+        }
+    }
+    *Option: Move26
+    {
+        *Name: "Feed 26 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A D0>"
+        }
+    }
+    *Option: Move27
+    {
+        *Name: "Feed 27 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A D8>"
+        }
+    }
+    *Option: Move28
+    {
+        *Name: "Feed 28 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A E0>"
+        }
+    }
+    *Option: Move29
+    {
+        *Name: "Feed 29 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A E8>"
+        }
+    }
+    *Option: Move30
+    {
+        *Name: "Feed 30 mm"
+        *Command: CmdSelect
+        {
+            *Order: PAGE_FINISH.3
+            *Cmd: "<1B 4A F0>"
+        }
+    }
+    
+}
+
+
+
+*Feature: Halftone
+{
+    *rcNameID: =HALFTONING_DISPLAY
+    *DefaultOption: HT_PATSIZE_AUTO
+    *Option: HT_PATSIZE_AUTO
+    {
+        *rcNameID: =HT_AUTO_SELECT_DISPLAY
+    }
+    *Option: HT_PATSIZE_SUPERCELL_M
+    {
+        *rcNameID: =HT_SUPERCELL_DISPLAY
+    }
+    *Option: HT_PATSIZE_6x6_M
+    {
+        *rcNameID: =HT_DITHER6X6_DISPLAY
+    }
+    *Option: HT_PATSIZE_8x8_M
+    {
+        *rcNameID: =HT_DITHER8X8_DISPLAY
+    }
+}
+
+*Command: CmdStartJob
+{
+    *Order: JOB_SETUP.1
+    *Cmd: "<10FFFE011B40>"
+}
+*Command: CmdStartDoc
+{
+    *Order: DOC_SETUP.1
+    *Cmd: "<>"
+}
+*Command: CmdStartPage
+{
+    *Order: JOB_SETUP.1
+    *Cmd: "<>"
+}
+*Command: CmdEndPage
+{
+    *Order: PAGE_FINISH.1
+    *Cmd: "<>"
+}
+*Command: CmdEndDoc
+{
+    *Order: DOC_FINISH.1
+    *Cmd: "<>"
+}
+*Command: CmdEndJob
+{
+    *Order: JOB_FINISH.1
+    *Cmd: "<10FFFE45>"
+}
+
+
+*RotateCoordinate?: FALSE
+*RotateRaster?: FALSE
+*RotateFont?: FALSE
+*switch: Orientation
+{
+    *case: PORTRAIT
+    {
+        *TextCaps: LIST(TC_EA_DOUBLE,TC_UA_ABLE,TC_RA_ABLE)
+    }
+    *case: LANDSCAPE_CC270
+    {
+        *TextCaps: LIST(TC_RA_ABLE)
+    }
+}
+*CursorXAfterCR: AT_CURSOR_X_ORIGIN
+*YMoveAttributes: LIST(SEND_CR_FIRST)
+*XMoveThreshold: 0
+*YMoveThreshold: *
+*XMoveUnit: 203
+*YMoveUnit: 203
+*Command: CmdXMoveAbsolute { *Cmd : "<1B>$" %l{DestX } }
+*Command: CmdYMoveRelDown { *Cmd : "<1B>J" %c[0,255]{max_repeat(DestYRel )} }
+*Command: CmdCR { *Cmd : "<00>" }
+*Command: CmdLF { *Cmd : "<0A>" }
+*Command: CmdFF { *Cmd : "<>" }
+*EjectPageWithFF?: TRUE
+*OutputDataFormat: H_BYTE
+*OptimizeLeftBound?: FALSE
+*CursorXAfterSendBlockData: AT_GRXDATA_END
+*CursorYAfterSendBlockData: AUTO_INCREMENT
+
+*Command: CmdBoldOff { *Cmd : "<1B>E<00>" }
+*Command: CmdBoldOn { *Cmd : "<1B>E<01>" }
+*Command: CmdSelectDoubleByteMode { *Cmd : "<1C26>" }
+*Command: CmdSelectSingleByteMode { *Cmd : "<1C2E>" }
+*Command: CmdUnderlineOff { *Cmd : "<1B>-<00>" }
+*Command: CmdUnderlineOn { *Cmd : "<1B>-<01>" }

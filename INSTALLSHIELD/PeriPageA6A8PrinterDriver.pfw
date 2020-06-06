@@ -1,0 +1,269 @@
+[PackageForTheWeb]
+Version=2.0
+
+[Options]
+Title=PeriPageA6A8PrinterDriver
+Company=AstralSoup Design
+CompanyEMail=astralsoupdesign@icloud.com
+BasePath=C:\Users\Nicolas\Desktop\Nueva carpeta
+ImportPath=
+UseRTF=1
+SaveFiles=0
+SubFolders=1
+ApplicationName=PeriPage A6/A8 Printer Driver
+Description=PeriPage A6/A8 Printer Driver
+Comments=Printer Driver for the PeriPage A6/A8 Series Portable Printer
+Notice=Copyright (C) 2018-2020 Beeprt / AstralSoup Design
+Version=1.1.8
+OutputSpec=C:\Program Files (x86)\InstallShield\PackageForTheWeb 4\Output\PeriPageA6A8PrinterDriver.exe
+GUIDs=0
+Type=2
+Compress=1
+Sign=0
+Transfer=0
+Files=35
+
+[Engine]
+Setup=setup.exe
+
+[Runtime]
+Welcome=
+License=C:\Users\Nicolas\Desktop\agreement.rtf
+Prompt=
+Password=
+DefaultPath=%PROGRAMFILES%\PeriPage\Printer Driver
+Language=English
+WindowStyle=0
+Options=33
+Execute=PeriPage_DriverSetup.exe
+CmdLine=
+AllowChangeTarget=1
+AllowDelete=0
+LaunchEXE=1
+
+[Extension]
+Server=
+Calls=0
+
+[Code Signing]
+CompanyURL=
+SpecFile=
+KeyFile=
+Method=0
+
+; ~~~~~~~~~~ File Section ~~~~~~~~~~~
+[SubFolders]
+Count=3
+Folder1=i386
+Folder2=ia64
+Folder3=x64
+
+[File 1]
+Name=EULA.rtf
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\
+Flags=1
+Disk=0
+
+[File 2]
+Name=peripage.cat
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 3]
+Name=Printer.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 4]
+Name=Printer.inf
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 5]
+Name=PrinterA7.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 6]
+Name=PrinterA8.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 7]
+Name=PrinterA8plus.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 8]
+Name=STDNAMES.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 9]
+Name=UNIDRV.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=131089
+Disk=0
+
+[File 10]
+Name=UNIDRV.HLP
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=1
+Disk=0
+
+[File 11]
+Name=UNIDRVUI.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=131089
+Disk=0
+
+[File 12]
+Name=UNIRES.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\i386\
+Flags=131089
+Disk=0
+
+[File 13]
+Name=peripage.cat
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 14]
+Name=Printer.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 15]
+Name=Printer.inf
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 16]
+Name=PrinterA7.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 17]
+Name=PrinterA8.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 18]
+Name=PrinterA8plus.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 19]
+Name=STDNAMES.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 20]
+Name=UNIDRV.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=131089
+Disk=0
+
+[File 21]
+Name=UNIDRV.HLP
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=1
+Disk=0
+
+[File 22]
+Name=UNIDRVUI.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=131089
+Disk=0
+
+[File 23]
+Name=UNIRES.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\ia64\
+Flags=131089
+Disk=0
+
+[File 24]
+Name=PeriPage_DriverSetup.exe
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\
+Flags=65537
+Disk=0
+
+[File 25]
+Name=peripage.cat
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 26]
+Name=Printer.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 27]
+Name=Printer.inf
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 28]
+Name=PrinterA7.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 29]
+Name=PrinterA8.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 30]
+Name=PrinterA8plus.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 31]
+Name=STDNAMES.GPD
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 32]
+Name=UNIDRV.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=131089
+Disk=0
+
+[File 33]
+Name=UNIDRV.HLP
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=1
+Disk=0
+
+[File 34]
+Name=UNIDRVUI.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=131089
+Disk=0
+
+[File 35]
+Name=UNIRES.DLL
+Path=C:\Users\Nicolas\Desktop\Nueva carpeta\x64\
+Flags=131089
+Disk=0
