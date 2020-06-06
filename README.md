@@ -7,5 +7,11 @@ Files were retrieved from the official PeriPage website and repackaged with a ne
 Features:
 - Revamped wizard image
 - Spanish translation embedded
+- English and Chinese layout was revamped
+
+
+Requirements:
+- A 32-bit or 64-bit Windows computer.
+
 
 Provided by AstralSoup Design under the same distribution agreements held between the user and PeriPage.
